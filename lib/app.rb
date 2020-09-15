@@ -20,8 +20,14 @@ get '/random-cat' do
   erb(:index)
 end
 #returns @name, but it is set by the user in the URL e.g.(?name=Linus)
-get '/named-cat' do
+post '/named-cat' do
   p params
   @name = params[:name]
-  erb(:index)
+  erb :index
 end
+
+
+get '/cat-form' do
+  erb :cat_form
+end
+  
